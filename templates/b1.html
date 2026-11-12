@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Tickets</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+
+        <h1>Book Your Tickets</h1>
+
+        <h3>Movie: {{ movie }}</h3>
+        <p>Theater: {{ theater }}</p>
+        <p>Address: {{ address }}</p>
+        <p>Price per Seat: Rs. {{ price }}</p>
+
+        <form action="{{ url_for('tickets') }}"
+              method="POST">
+
+            <input type="hidden" name="movie"
+                   value="{{ movie }}">
+
+            <input type="hidden" name="theater"
+                   value="{{ theater }}">
+
+            <input type="hidden" name="address"
+                   value="{{ address }}">
+
+            <input type="hidden" name="price"
+                   value="{{ price }}">
+
+            <h3>Select Your Seats</h3>
+
+            <label>
+                <input type="checkbox" name="seats"
+                       value="A1"> A1
+            </label>
+
+            <label>
+                <input type="checkbox" name="seats"
+                       value="A2"> A2
+            </label>
+
+            <label>
+                <input type="checkbox" name="seats"
+                       value="A3"> A3
+            </label>
+
+            <br><br>
+
+            <label>
+                <input type="checkbox" name="seats"
+                       value="B1"> B1
+            </label>
+
+            <label>
+                <input type="checkbox" name="seats"
+                       value="B2"> B2
+            </label>
+
+            <label>
+                <input type="checkbox" name="seats"
+                       value="B3"> B3
+            </label>
+
+            <br><br>
+
+            <button type="submit">
+                Confirm Booking
+            </button>
+        </form>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movies</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ user.name }}!</h1>
+
+        <h2>Available Movies</h2>
+
+        <div class="movie">
+            <h3>RRR</h3>
+            <p>Theater: Prasads Multiplex</p>
+            <p>Address: Necklace Road, Hyderabad</p>
+            <p>Ticket Price: Rs. 200</p>
+
+            <a href="{{ url_for('booking',
+                movie='RRR',
+                theater='Prasads Multiplex',
+                address='Necklace Road Hyderabad',
+                price=200) }}">
+                Book Tickets
+            </a>
+        </div>
+
+        <div class="movie">
+            <h3>Karthikeya 2</h3>
+            <p>Theater: PVR Icon</p>
+            <p>Address: Hitech City, Hyderabad</p>
+            <p>Ticket Price: Rs. 175</p>
+
+            <a href="{{ url_for('booking',
+                movie='Karthikeya 2',
+                theater='PVR Icon',
+                address='Hitech City Hyderabad',
+                price=175) }}">
+                Book Tickets
+            </a>
+        </div>
+
+        <br>
+
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</body>
+</html>
